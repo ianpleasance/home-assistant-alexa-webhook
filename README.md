@@ -112,7 +112,7 @@ Files
 docker-compose.yml: Defines the services (OpenResty).
 launch.sh: Launcher shell script for people who don't use Docker Compose
 
-nginx.conf: The main Nginx configuration file.
+nginx.conf: The main nginx configuration file.
 openresty.conf: OpenResty-specific configuration file.
 
 Lua scripts to control access and HTTP(S) request transformation
@@ -125,7 +125,7 @@ aws_lambda_ips.conf: A list of known AWS IP addresses, optionally used to limit 
 build_aws_lambda_ips_conf.py: Script to build the above
 
 webhooks.csv: The primary file which defines names, paths, HTTP(S) methods, and response text for webhooks. This is the one that should be edited to add and remove webbooks
-webhooks.conf: Openresty location configurations, built from the above
+webhooks.conf: OpenResty location configurations, built from the above
 webhooks.json: Static JSON file listing webhooks and their configuration, built from the above
 build_webhooks_conf.py: Script to turn webhooks.csv into webhooks.conf and webhooks.json and webhook_payloads.lua
 

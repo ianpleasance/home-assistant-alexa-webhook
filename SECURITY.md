@@ -64,3 +64,5 @@ Then
 - Save the skill code, and redeploy
 
 
+Make your own decision as to which of these, if any, you want to implement. I made the decision to not use SSL and to use Basic Authentication.
+
