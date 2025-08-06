@@ -1,0 +1,8 @@
+open_main_gates,GET,/api/webhook/webhook_open_main_gates,"Opened Main Gates"
+close_main_gates,GET,/api/webhook/webhook_close_main_gates,"Closed Main Gates"
+open_garage_door,GET,/api/webhook/webhook_open_garage_door,"Opened Garage Door"
+close_garage_door,GET,/api/webhook/webhook_close_garage_door,"Closed Garage Door"
+all_lights_on,GET,/api/webhook/webook_all_lights_on,"OK All Lights On"
+iantest,GET,/api/webhook/webhook_ian_test,"Test successfully run"
+alexatest,GET,/api/webhook/alexatest,"Alexa Test initiated"
+parmstest,POST,/api/webhook/alexatest2,"Alexa Parms Initiated"

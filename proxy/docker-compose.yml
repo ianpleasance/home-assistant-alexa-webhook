@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  nginxproxy:
+    image: openresty/openresty:1.21.4.1-0-alpine
+    container_name: nginxproxy
+    restart: unless-stopped
+    ports:
+      - "8124:8124"
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - /home/nginxproxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /home/nginxproxy/index.html:/usr/share/nginx/html/index.html
+      - /logs/nginxproxy:/var/log/nginx
+      - /home/nginxproxy/aws_lambda_ips.conf:/etc/nginx/aws_lambda_ips.conf
+      - /home/nginxproxy/webhooks.conf:/etc/nginx/webhooks.conf
+      - /home/nginxproxy/webhook_access.lua:/etc/nginx/webhook_access.lua
+      - /home/nginxproxy/webhook_header_filter.lua:/etc/nginx/webhook_header_filter.lua
+      - /home/nginxproxy/webhook_body_filter.lua:/etc/nginx/webhook_body_filter.lua
+      - /home/nginxproxy/webhook_payloads.lua:/etc/nginx/webhook_payloads.lua
+      - /home/nginxproxy/webhooks.json:/usr/share/nginx/html/hass_webhooks.json
+      - /home/nginxproxy/openresty.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - /home/nginxproxy/.htpasswd:/etc/nginx/.htpasswd
+
