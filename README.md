@@ -2,7 +2,7 @@
 
 # Home Assistant Webhook Alexa Skill
 
-This project is designed to link Amazon Alexa's speech and Home Assistant (HASS) so that users can trigger simple and complex automations via HASS webhooks.
+This project is designed to link Amazon Alexa's speech and Home Assistant (HASS) so that users can trigger simple and complex automations via HASS webhooks, and optionally pass parameters to them.
 
 **Background**
 
@@ -27,7 +27,7 @@ Parse the spoken command to extract the webhook ID and any parameters.
 
 Consult a configuration file hosted on the OpenResty proxy to determine the correct HTTP method (GET or POST) and path.
 
-Send the final HTTP request, including a JSON payload for parameters, to the OpenResty proxy.
+Send the final HTTP request, including a JSON payload for any parameters, to the OpenResty proxy.
 
 Read the response from the proxy and provide a friendly voice response back to the user.
 
@@ -96,6 +96,10 @@ Sends a POST request with {"temperature": "23"} to the webhook configured as set
 "*Alexa, ask My Home to trigger lights with color red brightness one fifty*"
 
 Sends a POST request with {"color": "red", "brightness": "150"} to the webhook configured as lights.
+
+
+While you can use these voice commands as-is, to make them easier you'll probably want to add Alexa Routines to your account to remap them to easier voice calls. To do this you can run the Alexa App, Create a Routine, and then a "When" and a "Will" - for example "When:Voice:Open Gates" "Alexa Will:Customised:ask hass webhook to trigger opengates"
+
 
 **OpenResty Proxy Setup via Docker**
 
