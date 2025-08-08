@@ -21,7 +21,7 @@ Instead of directly exposing your Home Assistant's webhook endpoint to the inter
 
 The skill's primary function is to:
 
-Listen for a custom invocation and command (e.g., "ask [your skill name] to trigger [a webhook]").
+Listen for a custom invocation and command (e.g., "ask [skill name] to trigger [a webhook]").
 
 Parse the spoken command to extract the webhook ID and any parameters.
 
@@ -79,21 +79,21 @@ The [Webhook Command] can include parameters, which the skill will automatically
 
 Example commands with no parameters
 
-"*Alexa, ask My Home to trigger openmaingates*"
+"*Alexa, ask hass webhook to trigger openmaingates*"
 
 Sends a GET or POST request to the webhook configured as open_main_gates.
 
-"*Alexa, ask My Home to trigger turnonlights*"
+"*Alexa, ask hass webhook to trigger turnonlights*" 
 
 Sends a GET request to the webhook configured as turn_on_lights.
 
 Example commands with parameters
 
-"*Alexa, ask My Home to trigger settemperature equals twenty three*"
+"*Alexa, ask hass webhook to trigger settemperature equals twenty three*"
 
 Sends a POST request with {"temperature": "23"} to the webhook configured as settemperature.
 
-"*Alexa, ask My Home to trigger lights with color red brightness one fifty*"
+"*Alexa, ask hass webhook to trigger lights with color red brightness one fifty*"
 
 Sends a POST request with {"color": "red", "brightness": "150"} to the webhook configured as lights.
 
